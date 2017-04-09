@@ -48,7 +48,6 @@ module.exports = {
                 loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader', "sass-loader"]}),
             }
         ]
-
     },
     stats: {
         colors: true
