@@ -1,6 +1,5 @@
 coverage
-public/css
-public/js
+public
 node_modules
 npm-debug.log
 .idea

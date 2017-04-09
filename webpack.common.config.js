@@ -4,6 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpackMerge = require('webpack-merge');
 const webpackMergeDll = webpackMerge.strategy({plugins: 'replace'});
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: __dirname + '/src',
@@ -13,7 +14,7 @@ module.exports = {
     },
     output: {
         path: __dirname + '/public',
-        filename: 'js/index.js'
+        filename: 'js/[name].js'
     },
 
     module: {
@@ -41,12 +42,13 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'eslint-loader',
+                loader: 'eslint-loader'
             },
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader', "sass-loader"]}),
             }
+
         ]
     },
     stats: {
@@ -65,6 +67,15 @@ module.exports = {
                     '[type="text"]': '[placeholder]'
                 }
             }
+        }),
+        new CopyWebpackPlugin([
+            { from: __dirname + '/src/index.html', to: __dirname + '/public/index.html' }
+        ]),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor'
         })
+        //new HtmlWebpackPlugin({
+        //    filename: './src/index.html'
+        //})
     ]
 };
