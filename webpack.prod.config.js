@@ -14,6 +14,6 @@ module.exports = function () {
             new webpack.optimize.UglifyJsPlugin(),
             new webpack.BannerPlugin('created by Liliia Sydorenko'),
 
-        ],
+        ]
     })
 };

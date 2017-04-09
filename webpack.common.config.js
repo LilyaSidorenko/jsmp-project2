@@ -15,8 +15,22 @@ module.exports = {
         path: __dirname + '/public',
         filename: 'js/index.js'
     },
+
     module: {
         loaders: [
+            {
+                enforce: 'post',
+                test: /\.js$/,
+                include: /src/,
+                exclude: /node_modules/,
+                use: [{loader: 'sourcemap-istanbul-instrumenter-loader', query: {esModules: true}}]
+            },
+            {
+                enforce: 'pre',
+                exclude: /node_modules/,
+                test: /\.html$/,
+                loader: 'html-test?htmlTests'
+            },
             {
                 enforce: 'pre',
                 test: /\.js$/,
@@ -29,17 +43,9 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'eslint-loader',
             },
-
-
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader', "sass-loader"]}),
-            },
-
-            {
-                test: /\.js$/,
-                exclude: /test\/|node_modules/,
-                loaders: ['istanbul-instrumenter-loader']
             }
         ]
 
@@ -50,11 +56,16 @@ module.exports = {
 
     plugins: [
         new ExtractTextPlugin('css/styles.css'),
+
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
-
-
-
-    ],
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                htmlTests: {
+                    '[type="text"]': '[placeholder]'
+                }
+            }
+        })
+    ]
 };

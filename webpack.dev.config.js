@@ -6,15 +6,13 @@ module.exports = function () {
     return webpackMerge(commonConfig, {
 
         watch: true,
-
-        devtool: 'cheap-inline-module-source-map',
-
+        devtool: 'cheap-module-source-map',
 
         devServer: {
             contentBase: path.join(__dirname, "public"),
             compress: true,
-            port: 8000,
-            watchContentBase: true,
+            port: 8080,
+            watchContentBase: true
         }
     })
 };
