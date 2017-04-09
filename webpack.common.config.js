@@ -14,7 +14,7 @@ module.exports = {
     },
     output: {
         path: __dirname + '/public',
-        filename: 'js/[name].js'
+        filename: 'js/index.js'
     },
 
     module: {
@@ -71,9 +71,9 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: __dirname + '/src/index.html', to: __dirname + '/public/index.html' }
         ]),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
-        })
+        //new webpack.optimize.CommonsChunkPlugin({
+        //    name: 'vendor'
+        //})
         //new HtmlWebpackPlugin({
         //    filename: './src/index.html'
         //})

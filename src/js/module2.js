@@ -1,3 +1,4 @@
 export const sayHi = () => {
-    return 'hi';
+    console.log('should log hi');
+    return "hi";
 };
