@@ -22,6 +22,7 @@ module.exports = function (config) {
     ],
     preprocessors: {
       'tests/tests.index.js': ['webpack', 'sourcemap'],
+      'tests/module.spec.js': ['webpack', 'sourcemap']
     },
     reporters: config.coverage ? ['progress', 'coverage'] : ['progress', 'kjhtml'],
 

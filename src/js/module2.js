@@ -1,5 +1,4 @@
-export const sayHi = () =>
-{
+export const sayHi = () => {
     return "hi";
 };
 
