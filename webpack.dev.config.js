@@ -9,8 +9,7 @@ module.exports = function () {
         devtool: 'cheap-module-source-map',
 
         devServer: {
-            contentBase: path.join(__dirname, "public"),
-            compress: true,
+            contentBase: __dirname + "/public/",
             port: 8080,
             watchContentBase: true
         }

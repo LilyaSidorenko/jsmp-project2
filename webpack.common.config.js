@@ -2,8 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const webpackMerge = require('webpack-merge');
-const webpackMergeDll = webpackMerge.strategy({plugins: 'replace'});
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -27,15 +25,8 @@ module.exports = {
                 use: [{loader: 'sourcemap-istanbul-instrumenter-loader', query: {esModules: true}}]
             },
             {
-                enforce: 'pre',
-                exclude: /node_modules/,
-                test: /\.html$/,
-                loader: 'html-test?htmlTests'
-            },
-            {
-                enforce: 'pre',
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: [/node_modules/],
                 loader: 'babel-loader',
                 query: {presets: ['es2015']}
             },
@@ -61,21 +52,9 @@ module.exports = {
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                htmlTests: {
-                    '[type="text"]': '[placeholder]'
-                }
-            }
-        }),
         new CopyWebpackPlugin([
             { from: __dirname + '/src/index.html', to: __dirname + '/public/index.html' }
-        ]),
-        //new webpack.optimize.CommonsChunkPlugin({
-        //    name: 'vendor'
-        //})
-        //new HtmlWebpackPlugin({
-        //    filename: './src/index.html'
-        //})
+        ])
+
     ]
 };
