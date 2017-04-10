@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "karma start karma.conf.js",
-    "lint": "eslint src/js; exit 0",
+    "lint": "eslint src/js",
     "start": "start http://localhost:8080/ & webpack-dev-server --content-base public",
     "build:dev": "webpack --config webpack.dev.config.js",
     "build:prod": "webpack --config webpack.prod.config.js",
