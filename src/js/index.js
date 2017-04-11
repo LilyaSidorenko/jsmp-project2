@@ -1,5 +1,5 @@
-import { sayHello } from './module';
-import { sayHi } from './module2';
+import { sayHello } from './module/module';
+import { sayHi } from './module/module2';
 const element = document.createElement('h1');
 element.innerHTML = sayHello('World');
 document.body.appendChild(element);

@@ -9,8 +9,9 @@ module.exports = {
   context: __dirname + '/src',
 
   entry: {
-    "index": "./js/module/index.js",
-    "common": "./js/global.js"
+     index: "./js/index.js",
+     global: "./js/global.js",
+     common: "./js/module/module.js"
   },
   output: {
     path: __dirname + '/public',
