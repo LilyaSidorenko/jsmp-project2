@@ -9,23 +9,20 @@ module.exports = {
   context: __dirname + '/src',
 
   entry: {
-    home: ['./js/index.js', './scss/add-list.scss']
+    "index": "./js/module/index.js",
+    "common": "./js/global.js"
   },
   output: {
     path: __dirname + '/public',
-    filename: 'js/index.js'
+    filename: 'js/[name].js',
   },
 
   module: {
     loaders: [
+
       {
         enforce: 'post',
-        test: /\.js$/,
-        include: /src/,
-        exclude: /node_modules/,
-        use: [{loader: 'sourcemap-istanbul-instrumenter-loader', query: {esModules: true}}]
-      },
-      {
+
         test: /\.js$/,
         exclude: [/node_modules/],
         loader: 'babel-loader',
@@ -61,7 +58,6 @@ module.exports = {
       options: {
         postcss: [autoprefixer({ browsers: ['last 10 versions'] })]
       }
-    })
-
+    }),
   ]
 };

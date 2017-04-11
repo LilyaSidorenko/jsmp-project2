@@ -12,7 +12,10 @@ module.exports = function () {
                 cssProcessorOptions: {discardComments: {removeAll: true}}
             }),
             new webpack.optimize.UglifyJsPlugin(),
-            new webpack.BannerPlugin('created by Liliia Sydorenko')
+            new webpack.BannerPlugin('created by Liliia Sydorenko'),
+            new webpack.optimize.CommonsChunkPlugin({
+              name: "common",
+            })
 
         ]
     })

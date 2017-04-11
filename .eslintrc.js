@@ -9,7 +9,7 @@ module.exports = {
 
     'rules': {
         'indent': [0, 4],
-        'linebreak-style': [2, 'unix'],
+        'linebreak-style': [0, 'unix'],
         'quotes': [1, 'single'],
         'semi': [1, 'always'],
         'brace-style': [2, '1tbs'],
@@ -17,7 +17,8 @@ module.exports = {
         'camelcase': [2, {'properties': 'always'}],
         'keyword-spacing': [2],
         'no-trailing-spaces': [2],
-        'no-unused-vars': [0]
+        'no-unused-vars': [0],
+
     },
     "parserOptions": {
         "sourceType": "module"

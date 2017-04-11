@@ -1,5 +1,5 @@
-import { sayHello } from '../src/js/module';
-import { sayHi } from '../src/js/module2';
+import { sayHello } from '../src/js/module/module';
+import { sayHi } from '../src/js/module/module2';
 describe('module', function () {
 
     const hello = sayHello('World');
