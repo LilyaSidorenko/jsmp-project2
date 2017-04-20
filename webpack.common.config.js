@@ -10,8 +10,10 @@ module.exports = {
 
   entry: {
      index: "./js/index.js",
-     global: "./js/global.js",
-     common: "./js/module/module.js"
+     init: "./js/settings/init.js",
+     states: "./js/states.js"
+
+
   },
   output: {
     path: __dirname + '/public',

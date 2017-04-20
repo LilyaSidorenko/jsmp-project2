@@ -11,24 +11,24 @@
   <div id="formBody" class="formBody">
     <form action="" method="POST" name="contactForm">
       <div class="inputContainer">
-        <input name="name" id="userName" type="text" placeholder="Liliia Sydorenko">
+        <input name="name" id="name" type="text" placeholder="Liliia Sydorenko"><span class="error-message"></span>
       </div>
       <div class="inputContainer">
-        <input name="email" id="email" type="email" placeholder="lsydorenko@domain.com">
+        <input name="email" id="email" type="email" placeholder="lsydorenko@domain.com"><span class="error-message"></span>
       </div>
       <div class="inputContainer">
-        <input name="phone" id="phone" type="tel" placeholder="0935647477">
+        <input name="phone" id="phone" type="text" placeholder="0935647477"><span class="error-message"></span>
       </div>
       <div class="inputContainer">
-        <textarea name="feedback" id="userMessage" rows="10" placeholder="Enter your message"></textarea>
+        <textarea name="feedback" id="message" rows="10" placeholder="Enter your message"></textarea><span class="error-message"></span>
       </div>
       <input id="submitBtn" class="submitBtn" type="submit" value="Send">
     </form>
   </div>
 </div>
-<script src="js/common.js"></script>
 <script src="js/index.js"></script>
-<script src="js/global.js"></script>
+<script src="js/init.js"></script>
+<script src="js/states.js"></script>
 
 </body>
 </html>

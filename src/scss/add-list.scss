@@ -36,7 +36,6 @@ $opacBlack: rgba(0, 0, 0, 0.3);
 
   .formBody {
     background: $white;
-    height: 371px;
     padding: 20px 12px;
     overflow: hidden;
 
@@ -47,9 +46,19 @@ $opacBlack: rgba(0, 0, 0, 0.3);
   .inputContainer {
     border-radius: 3px;
     position: relative;
-    margin-bottom: 5px;
+    padding-bottom: 15px;
     overflow: hidden;
     background: transparent;
+
+     .error-message {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       display: block;
+       font-size: 14px;
+       color: red
+
+      }
 
     .message {
       color: $error;
@@ -121,7 +130,8 @@ $opacBlack: rgba(0, 0, 0, 0.3);
     }
   }
 
-  input.success {
+  input.success,
+  textarea.success{
     border-color: $lightSuccess / 1.1;
 
     input,
@@ -130,7 +140,8 @@ $opacBlack: rgba(0, 0, 0, 0.3);
     }
   }
 
-  input.error {
+  input.error,
+  textarea.error {
     border-color: $error / 1.1;
 
     .message {

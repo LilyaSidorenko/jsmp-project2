@@ -8,11 +8,11 @@ module.exports = function () {
 
         watch: true,
         devtool: 'cheap-module-source-map',
-        plugins: [
-          new webpack.optimize.CommonsChunkPlugin({
-            name: "common",
-          })
-        ],
+        // plugins: [
+        //   new webpack.optimize.CommonsChunkPlugin({
+        //     name: "common",
+        //   })
+        // ],
         devServer: {
             contentBase: __dirname + "/public/",
             port: 8080,

@@ -1,8 +1,19 @@
-import { sayHello } from './module/module';
-import { sayHi } from './module/module2';
-const element = document.createElement('h1');
-element.innerHTML = sayHello('World');
-document.body.appendChild(element);
-const element2 = document.createElement('h2');
-element2.innerHTML = sayHi();
-document.body.appendChild(element2);
+export const validateEmail = function (email) {
+  const regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regexp.test(email);
+};
+export const validatePhone = function (phone) {
+  const regexp = /^(\+380|0)([0-9]{9})$/;
+  return regexp.test(phone);
+};
+export const validateMessage = function (message) {
+  if (message == '') {
+    return false;
+  } else {
+    return true;
+  }
+};
+export const validateName = function (name) {
+  const regexp = /^[a-z]([-']?[a-z]+)*( [a-z]([-']?[a-z]+)*)+$/;
+  return regexp.test(name);
+};
