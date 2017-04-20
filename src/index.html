@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+<div id="contactForm" class="contactForm">
+  <div id="formBody" class="formBody">
+    <form action="" method="POST" name="contactForm">
+      <div class="inputContainer">
+        <input name="name" id="userName" type="text" placeholder="Liliia Sydorenko">
+      </div>
+      <div class="inputContainer">
+        <input name="email" id="email" type="email" placeholder="lsydorenko@domain.com">
+      </div>
+      <div class="inputContainer">
+        <input name="phone" id="phone" type="tel" placeholder="0935647477">
+      </div>
+      <div class="inputContainer">
+        <textarea name="feedback" id="userMessage" rows="10" placeholder="Enter your message"></textarea>
+      </div>
+      <input id="submitBtn" class="submitBtn" type="submit" value="Send">
+    </form>
+  </div>
+</div>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
 <script src="js/global.js"></script>
-
-
 
 </body>
 </html>
