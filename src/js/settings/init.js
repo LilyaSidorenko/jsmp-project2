@@ -7,6 +7,8 @@ var nameInput = document.getElementById('name');
 var emailInput = document.getElementById('email');
 var phoneInput = document.getElementById('phone');
 var messageInput = document.getElementById('message');
+var submitBtn = document.getElementById('submitBtn');
+var formHeader = document.getElementById('formHeader');
 
 nameInput.addEventListener('blur', function(){
   this.value = validate.inputTrimming(this.value);
@@ -57,5 +59,9 @@ messageInput.addEventListener('blur', function(){
 });
 messageInput.addEventListener('focus', function(){
   states.defaultState(this);
+});
+submitBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  validate.submitButton(formHeader);
 });
 

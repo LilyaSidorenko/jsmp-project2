@@ -20,3 +20,7 @@ export const validateName = function (name) {
 export const inputTrimming = function (input) {
   return input.trim();
 };
+export const submitButton = function (header) {
+  header.innerHTML = "Thank you for your feedback";
+  return header.innerHTML;
+};
