@@ -9,10 +9,12 @@ var phoneInput = document.getElementById('phone');
 var messageInput = document.getElementById('message');
 
 nameInput.addEventListener('blur', function(){
+  this.value = validate.inputTrimming(this.value);
+
   if (validate.validateName(this.value)) {
     states.successState(this);
   } else {
-    states.errorState(this, 'Please write correct email');
+    states.errorState(this, 'Please write correct name');
   }
 });
 nameInput.addEventListener('focus', function(){
@@ -20,6 +22,8 @@ nameInput.addEventListener('focus', function(){
 });
 
 emailInput.addEventListener('blur', function(){
+  this.value = validate.inputTrimming(this.value);
+
   if (validate.validateEmail(this.value)) {
     states.successState(this);
   } else {
@@ -31,6 +35,8 @@ emailInput.addEventListener('focus', function(){
 });
 
 phoneInput.addEventListener('blur', function(){
+  this.value = validate.inputTrimming(this.value);
+
   if (validate.validatePhone(this.value)) {
     states.successState(this);
   } else {
@@ -41,12 +47,15 @@ phoneInput.addEventListener('focus', function(){
   states.defaultState(this);
 });
 messageInput.addEventListener('blur', function(){
+  this.value = validate.inputTrimming(this.value);
+
   if (validate.validateMessage(this.value)) {
     states.successState(this);
   } else {
-    states.errorMessage(this, 'Please write your message');
+    states.errorState(this, 'Please write your message');
   }
 });
 messageInput.addEventListener('focus', function(){
   states.defaultState(this);
 });
+

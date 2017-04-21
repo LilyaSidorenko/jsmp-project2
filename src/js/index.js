@@ -7,7 +7,7 @@ export const validatePhone = function (phone) {
   return regexp.test(phone);
 };
 export const validateMessage = function (message) {
-  if (message == '') {
+  if (message === '') {
     return false;
   } else {
     return true;
@@ -16,4 +16,7 @@ export const validateMessage = function (message) {
 export const validateName = function (name) {
   const regexp = /^[a-z]([-']?[a-z]+)*( [a-z]([-']?[a-z]+)*)+$/;
   return regexp.test(name);
+};
+export const inputTrimming = function (input) {
+  return input.trim();
 };
