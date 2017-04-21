@@ -58,5 +58,10 @@ describe('validation form', function() {
        expect(validation.validateMessage('Some message for you')).toBe(true);
      });
    });
+  describe('trimming spaces', function() {
+    it('should trim all spaces before validation', function() {
+      expect(validation.inputTrimming('   my name ')).toBe('my name');
+    });
+  });
 });
 
