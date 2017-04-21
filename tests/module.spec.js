@@ -63,5 +63,12 @@ describe('validation form', function() {
       expect(validation.inputTrimming('   my name ')).toBe('my name');
     });
   });
+  describe('add success message', function() {
+
+    it('should change default message to success', function() {
+      var header = document.createElement('h3');
+      expect(validation.submitButton(header)).toBe("Thank you for your feedback");
+    });
+  });
 });
 
