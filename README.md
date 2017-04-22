@@ -1,5 +1,16 @@
 ### Navigation list
 
+1 Create validation for credit card
+```
+- Write unit test (check if card has 16 numbers, starts with correct number)
+```
+- Write code (use regexp and replace)
+```
+- init my code for validation card and add spaces
+```
+- check it
+```
+
 
 1 Create trimming for form values
 ```
