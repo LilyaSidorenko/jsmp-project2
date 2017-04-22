@@ -24,3 +24,8 @@ export const submitButton = function (header) {
   header.innerHTML = "Thank you for your feedback";
   return header.innerHTML;
 };
+export const splitCard = function (card) {
+  return card.replace(/\W/gi, '').replace(/(.{4})/g, '$1 ').trim();
+};
+
+
