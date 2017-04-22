@@ -70,5 +70,11 @@ describe('validation form', function() {
       expect(validation.submitButton(header)).toBe("Thank you for your feedback");
     });
   });
+  describe('card validation', function() {
+
+    it('should add space between each 4 numbers', function() {
+      expect(validation.splitCard('4731185606294277')).toBe("4731 1856 0629 4277");
+    });
+  });
 });
 
