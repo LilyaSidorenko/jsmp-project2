@@ -7,6 +7,7 @@ var nameInput = document.getElementById('name');
 var emailInput = document.getElementById('email');
 var phoneInput = document.getElementById('phone');
 var cardInput = document.getElementById('card');
+var dateInput = document.getElementById('date');
 var messageInput = document.getElementById('message');
 var submitBtn = document.getElementById('submitBtn');
 var formHeader = document.getElementById('formHeader');
@@ -68,7 +69,6 @@ submitBtn.addEventListener('click', function (e) {
 
 
 cardInput.addEventListener('blur', function(){
-    this.value = validate.splitCard(this.value);
     if (validate.validateCard(this.value)) {
     states.successState(this);
   } else {
@@ -78,4 +78,14 @@ cardInput.addEventListener('blur', function(){
 
 cardInput.addEventListener('focus', function(){
   states.defaultState(this);
+});
+dateInput.addEventListener('blur', function(){
+    if (validate.validateDate(this.value)) {
+        states.successState(this);
+    } else {
+        states.errorState(this, 'Please write correct date');
+    }
+});
+dateInput.addEventListener('focus', function(){
+    states.defaultState(this);
 });

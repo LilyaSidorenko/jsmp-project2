@@ -25,5 +25,9 @@ export const validateCard = function (card) {
   return regexp.test(card);
 };
 
+export const validateDate = function (card) {
+  const regexp = /^[0-9]{2}[-|\/]{1}[0-9]{2}[-|\/]{1}[0-9]{4}$/;
+  return regexp.test(card);
+};
 
 
