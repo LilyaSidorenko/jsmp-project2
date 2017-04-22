@@ -63,23 +63,26 @@ describe('validation form', function() {
       expect(validation.inputTrimming('   my name ')).toBe('my name');
     });
   });
-  describe('add success message', function() {
-
-    it('should change default message to success', function() {
-      var header = document.createElement('h3');
-      expect(validation.submitButton(header)).toBe("Thank you for your feedback");
-    });
-  });
   describe('card validation', function() {
-
-    it('should add space between each 4 numbers', function() {
-      expect(validation.splitCard('4731185606294277')).toBe("4731 1856 0629 4277");
-    });
     it('should validate card (16 characters, right numbers)', function() {
       expect(validation.validateCard('4731185606294277')).toBe(true);
     });
     it('should validate card (16 characters, right numbers)', function() {
       expect(validation.validateCard('47456jjkkkj')).toBe(false);
+    });
+  });
+  describe('date validation', function() {
+    it('should validate date with wrong info', function() {
+      expect(validation.validateDate('my-date')).toBe(false);
+    });
+    it('should validate date with wrong format', function() {
+      expect(validation.validateDate('10 jun 2010')).toBe(false);
+    });
+    it('should validate date with correct format', function() {
+      expect(validation.validateDate('11-12-2012')).toBe(true);
+    });
+    it('should validate date with correct format', function() {
+      expect(validation.validateDate('11/12/2012')).toBe(true);
     });
   });
 });
