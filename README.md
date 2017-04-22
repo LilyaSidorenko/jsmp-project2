@@ -1,5 +1,15 @@
 ### Navigation list
 
+1 Create validation for date
+```
+- Write unit test (check if date has correct number and separate "-")
+```
+- Write code (use regexp)
+```
+- check it
+```
+
+
 1 Create validation for credit card
 ```
 - Write unit test (check if card has 16 numbers, starts with correct number)

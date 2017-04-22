@@ -20,17 +20,10 @@ export const validateName = function (name) {
 export const inputTrimming = function (input) {
   return input.trim();
 };
-export const submitButton = function (header) {
-  header.innerHTML = "Thank you for your feedback";
-  return header.innerHTML;
-};
-export const splitCard = function (card) {
-  return card.replace(/\W/gi, '').replace(/(.{4})/g, '$1 ').trim();
-};
-
 export const validateCard = function (card) {
   const regexp = /^(?:4\d{3}|5[1-5]\d{2}|6011|3[47]\d{2})([- ]?)\d{4}\1\d{4}\1\d{4}$/;
   return regexp.test(card);
 };
+
 
 
