@@ -75,6 +75,12 @@ describe('validation form', function() {
     it('should add space between each 4 numbers', function() {
       expect(validation.splitCard('4731185606294277')).toBe("4731 1856 0629 4277");
     });
+    it('should validate card (16 characters, right numbers)', function() {
+      expect(validation.validateCard('4731185606294277')).toBe(true);
+    });
+    it('should validate card (16 characters, right numbers)', function() {
+      expect(validation.validateCard('47456jjkkkj')).toBe(false);
+    });
   });
 });
 
